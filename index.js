@@ -10,6 +10,7 @@ form.addEventListener('submit',function(e){
     getNews();
 });
 
+
 function getNews(){
     const articleRequest= new XMLHttpRequest();
 articleRequest.open('GET',`http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=<32bdcc00c11948dfb7ac92fde0d2924f>`);
@@ -18,9 +19,14 @@ articleRequest.open('GET',`http://api.nytimes.com/svc/search/v2/articlesearch.js
     articleRequest.send();
 }
 function handleError(){
-    console.log('seha presntado un error');
+    console.log('se ha presntado un error');
 }
 function addNews(){
     const data = JSON.parse(this.responseText);
     console.log(data);
+}
+function addNews(){
+const data=JSON.parse(this,responseText);
+const response= data.response;
+console.log(response);
 }
